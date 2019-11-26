@@ -7,5 +7,5 @@ metadata:
     ingress.appscode.com/use-dns-resolver: "true"
     ingress.appscode.com/dns-resolver-nameservers: '["8.8.8.8:53", "8.8.4.4:53"]'
 spec:
-  externalName: google.com
+  externalName: reallylongnameyoudonotwanttotype.g.jk308.com 
   type: ExternalName

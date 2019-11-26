@@ -1,0 +1,11 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: api-dns
+  namespace: nginx-test
+spec:
+  secretName: nginx-dns-tls
+  issuerRef:
+    name: letsencrypt-staging-dns
+  dnsNames:
+    - api.g.jk308.com

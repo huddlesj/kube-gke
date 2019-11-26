@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: nginx-test
+  annotations:
+    kubernetes.io/ingress.class: voyager
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-staging-dns"
+    certmanager.k8s.io/acme-challenge-type: dns01
+spec:
+  tls:
+    - hosts:
+        - api.g.jk308.com
+      secretName: nginx-dns-tls 
+  rules:
+    - http:
+        paths:
+          - backend:
+              serviceName: nginx-1-nginx-svc
+              servicePort: 80
+            path: /
