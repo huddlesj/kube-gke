@@ -1,0 +1,9 @@
+apiVersion: voyager.appscode.com/v1beta1
+kind: Ingress
+metadata:
+  name: test-ings-rhvulnlb
+  namespace: test-x
+spec:
+  backend:
+    serviceName: external-ns
+    servicePort: "80"

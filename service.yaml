@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-ns
+  namespace: test-x
+  annotations:
+    ingress.appscode.com/use-dns-resolver: "true"
+    ingress.appscode.com/dns-resolver-nameservers: '["8.8.8.8:53", "8.8.4.4:53"]'
+spec:
+  externalName: google.com
+  type: ExternalName
